@@ -23,6 +23,7 @@ export default function Produtos(props){
             await firebase.database().ref('usuarios').child(name).child('carrinho').child(produto).child('imagem').set(props.image)
             await firebase.database().ref('usuarios').child(name).child('carrinho').child(produto).child('nome').set(props.name)
             await firebase.database().ref('usuarios').child(name).child('carrinho').child(produto).child('valor').set(props.price)
+            await firebase.database().ref('usuarios').child(name).child('carrinho').child(produto).child('id').set(props.id)
             document.location.reload(true)
     }
 

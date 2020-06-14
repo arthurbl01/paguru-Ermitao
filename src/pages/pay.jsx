@@ -1,13 +1,45 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../css/pay.css';
-
+import firebase from 'firebase'
+import '../firebase'
 
 // COMPONENTS
 import Navbar from '../components/navbar';
 //import Cart from '../components/cart';
 
 export default function Pay(){
+    const [ name , setName ] = useState (localStorage.getItem('name'));
     const [ showCart, setShowCart ] =  useState ('none');
+    const [ carrinho , setCarrinho ] = useState ([]);
+    const [ valorTotal , setValorTotal ] = useState (0);
+
+    useEffect(() => {
+        async function getCar() {
+ 
+            await   firebase.database().ref('usuarios').child(name).child('carrinho').on('value',  (snapshot) => {
+               
+                  snapshot.forEach( (childItem) => {
+                      carrinho.push({
+                          key: childItem.key,
+                          nome: childItem.val().nome,
+                          imagem: childItem.val().imagem,
+                          valor: childItem.val().valor,
+                          quantidade: childItem.val().quantidade,
+                          id: childItem.val().id,
+                          
+                      });
+                      setValorTotal(parseFloat(carrinho.reduce((total, preco) => total + preco.valor, 0).toFixed(2)) );
+                     
+                  });
+              });
+          };
+   
+           getCar();
+
+      
+    
+    }, []);
+
     
     return(
         <div className="container-pay">
@@ -16,16 +48,28 @@ export default function Pay(){
             <div className="checkout">
                 <div className="receipt">
                     <h4 className="title-receipt">Recibo</h4>
+
+
                     <div className="itens-receipt">
-                        <div className="item-receipt">
-                            <img className="img-item-receipt" src="https://res.cloudinary.com/jaelsondev/image/upload/v1591948967/uploads/new-classic_unthwu.png"/> <span className="name-item-receipt">Concha Tie-Dye</span> <span className="qtd-item-receipt">1x</span>
-                        </div>
-                        <hr/>
-                    </div>
+                    {
+                            carrinho.map((item, index) => {
+                                return(
+                                        <div className="item-receipt">
+                                            
+                                            <img className="img-item-receipt" src={item.imagem} /> <span className="name-item-receipt">{item.nome}</span> <span className="qtd-item-receipt">{item.quantidade}x</span>
+                                          
+                                            
+                                        </div>                   
+                                );
+                            })
+                        }
+                           
+                           </div>
+
                    
                     <div className="date-values-receipt">
                         <span className="total-values-receipt">Total</span> 
-                        <span className="value-receipt">PG$ 79.94</span>
+                        <span className="value-receipt">PG$ {valorTotal}</span>
                     </div>
                 </div>
                 <div className="payment">

@@ -33,7 +33,7 @@ const handleLogin = () => {
     }
 
 }
-if(verify) {
+if(localStorage.getItem('name') === name) {
     return <Redirect to="/home/" />
   }
   else { 

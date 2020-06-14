@@ -4,10 +4,11 @@
 }
 
 .container-navbar{
+    position: fixed;
+    top: 0;
     background-color: #E3451A;
     height: 70px;
     width: 100%;
-    
 }
 
 
@@ -42,6 +43,10 @@
     margin: 0px 30px ;
     transition:  0.5s;
 
+}
+.logo{
+    font-weight: 800 !important;
+    font-size: calc(25px + (12 - 11) * ((100vw - 320px) / (1920 - 320))) !important;
 }
 
 .item-navbar-text-left{
@@ -82,7 +87,8 @@
 }
 
 .title-catalogue{
-    margin: 80px 0px;
+    margin-top: 150px;
+    margin-bottom: 80px;
     text-align: center;
     font-family: 'Montserrat', sans-serif;  
     font-size: calc(25px + (12 - 11) * ((100vw - 320px) / (1920 - 320)));
@@ -152,12 +158,12 @@
 /* CARRINHO DE COMPRAS */
 
 .container-cart{
-
     display: none;
     justify-content: flex-end;
 }
 .cart{
-    position: absolute;
+    margin-top: 70px;
+    position: fixed;
     background-color: #FFF;
     width: 450px;
 
@@ -340,7 +346,12 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 1500px) and (min-width: 1250px){
 
+    .item-catalogue{
+        width: 29.3%;
+    }
+}
 
 @media screen and (max-width: 1250px) and (min-width: 800px){
 
@@ -355,11 +366,13 @@
         border: none;
         line-height: 70px;
         font-family: 'Montserrat', sans-serif;  
-        font-size: calc(15px + (12 - 11) * ((100vw - 320px) / (1920 - 320)));
-        font-weight: 500;
+        font-size: calc(25px + (12 - 11) * ((100vw - 320px) / (1920 - 320)));
+        
         color: #FFF;
-        margin: 0px 10px ;
+        margin: 0px 0px ;
     }
+
+
 
     .name-usuario{
         display: none;
@@ -387,5 +400,10 @@
 
     .btn-close-cart{
         display: block;
+    }
+
+    .img-item-cart{
+        width: 40%;
+        height: 150px;
     }
 }

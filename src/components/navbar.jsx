@@ -13,12 +13,12 @@ const [name, setName ] = useState (localStorage.getItem('name'));
         }
     }
     const handleLogout = () => {
-        localStorage.removeItem('name');
+        localStorage.setItem('name', 'visitante');
     
         window.location.reload()
     }
 
-    if(name === null) {
+    if(name === 'visitante') {
         return(
              <Redirect to="/" />)
       }
@@ -27,7 +27,7 @@ const [name, setName ] = useState (localStorage.getItem('name'));
             <div className="container-navbar">
             <div className="navbar">
                 <div className="group-navbar-left">
-                    <span className="item-navbar-text-left">Ermitão</span>
+                    <span className="item-navbar-text-left logo">Ermitão</span>
                     <span className="item-navbar-text-left name-usuario"> Olá, {localStorage.getItem('name')}</span>
                 </div>
                 <div className="group-navbar-right">
