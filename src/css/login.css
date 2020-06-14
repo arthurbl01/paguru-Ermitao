@@ -1,0 +1,106 @@
+
+body{
+    background-color: #EAEAEA;
+}
+
+textarea:focus, input:focus, select:focus, button:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+
+} 
+
+
+.login-container .container{
+    margin: calc(200px + (12 - 11) * ((100vw - 320px) / (1920 - 320))) calc(2% + (12 - 11) * ((100vw - 320px) / (1920 - 320)));
+    padding: 0px;
+    
+}
+
+
+.container .login{
+    margin:  auto;
+   
+    display: block;
+    width: 320px;
+    background-color: #FFFFFF;
+    padding: 30px;
+}
+
+.title-login{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;  
+    font-size: calc(20px + (12 - 11) * ((100vw - 320px) / (1920 - 320)));
+    font-weight: 800;
+    color: #E3440C;
+}
+
+.sub-title-login{
+    margin: 10px auto;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;  
+    font-weight: 500;
+    color: #656565;
+    font-size: calc(14px + (12 - 11) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.label-form{
+    font-family: 'Montserrat', sans-serif;  
+    font-weight: 500;
+    color: #656565;
+    font-size: calc(15px + (12 - 11) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.form-login{
+    margin: auto;
+}
+
+
+.input-form{
+    font-family: 'Montserrat', sans-serif;  
+    width: 314px;
+    height: 40px;
+    font-size: calc(18px + (12 - 11) * ((100vw - 320px) / (1920 - 320)));
+    font-weight: 500;
+    color: #656565;
+    border-color:#CCCC ;
+    border-width: 1px;
+    border-radius: 0px;
+    padding: 1px 5px;
+    margin: 10px 0px;
+}
+
+
+.input-form:focus{
+    border-color:#C1C1C1 ;
+}
+
+.btn-form-login{
+    height: 45px;
+    width: 326px;
+    font-family: 'Montserrat', sans-serif;  
+    font-size: calc(15px + (12 - 11) * ((100vw - 320px) / (1920 - 320)));
+    font-weight: 700;
+    background-color: #D73B18;
+    color: #FCFCFC;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    margin: 10px 0px;
+    transition:  0.5s;
+}
+
+.btn-form-login:hover{
+    color: #E3440C;
+    background-color: #c92100;
+
+}
+
+.msg-error{
+    font-family: 'Montserrat', sans-serif;  
+    font-size: calc(10px + (12 - 11) * ((100vw - 320px) / (1920 - 320)));
+    font-weight: 700;
+    color: #c92100;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+}
