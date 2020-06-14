@@ -63,15 +63,23 @@ export default function Home() {
         setVerify(true);
      }
 
+     const hideDisplay = () => {
+         setShowCart('none')
+     }
+
+    const showDisplay = () => {
+        setShowCart('flex')
+    }
+
     return(
         <div className="container-home">
             <Navbar setShow={setShowCart} show={showCart}/>
 
 
-            <div className="container-cart" style={{display: showCart}}>
-                <div className="cart">
+            <div className="container-cart" style={{display: showCart}} >
+                <div className="cart" onMouseOver={showDisplay} onMouseOut={hideDisplay}>
                     <div className="title-cart">
-                        Carrinho de compras
+                        <span>Carrinho de compras</span> <span className="btn-close-cart" onClick={hideDisplay}><i class="fas fa-times"></i></span>
                     </div>
                     <div className="descripction-product">
                         <span className="itens-description-product">Itens</span> <span className="qtd-description-product"> Qtd.</span>

@@ -166,6 +166,8 @@
 
 
 .title-cart{
+    display: flex;
+    justify-content: space-between;
     padding: 0px 20px;
     line-height: 75px;
     height: 75px;
@@ -176,7 +178,14 @@
 
     box-shadow: 0 0px 0px rgba(0,0,0,0), 0 3px 6px rgba(0,0,0,0.23);
 }
-
+.btn-close-cart{
+    display: none;
+    cursor: pointer;
+    transition:  0.5s;
+}
+.btn-close-cart:hover{
+    color: #c92100;
+}
 .descripction-product{
     display: flex;
     padding: 0px 22px;
@@ -198,7 +207,7 @@
 
 .itens-cart{
     padding: 5px 20px;
-    max-height: 450px;
+    max-height: 500px;
     overflow-y: visible;
     overflow-x: hidden;
 }
@@ -349,10 +358,34 @@
         font-size: calc(15px + (12 - 11) * ((100vw - 320px) / (1920 - 320)));
         font-weight: 500;
         color: #FFF;
-        margin: 0px 0px ;
-        
+        margin: 0px 10px ;
+    }
+
+    .name-usuario{
+        display: none;
     }
     .item-catalogue{
         width: 100%;
+    }
+
+    .cart{
+        position: absolute;
+        background-color: #FFF;
+        width: 90%;
+        padding: 0px 5%;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+
+    .total-cart{
+        box-shadow: 0 0px 0px rgba(0,0,0,0), 0 3px 0px rgba(0,0,0,0.23);
+    }
+
+
+    .title-cart{
+        box-shadow: 0 0px 0px rgba(0,0,0,0), 0 3px 0px rgba(0,0,0,0.23);
+    }
+
+    .btn-close-cart{
+        display: block;
     }
 }

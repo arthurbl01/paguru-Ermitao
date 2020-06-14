@@ -27,8 +27,8 @@ const [name, setName ] = useState (localStorage.getItem('name'));
             <div className="container-navbar">
             <div className="navbar">
                 <div className="group-navbar-left">
-                    <span className="item-navbar-left"><i className="fas fa-warehouse fa-2x"></i></span>
-                    <span className="item-navbar-text-left"> Olá, {localStorage.getItem('name')}</span>
+                    <span className="item-navbar-text-left">Ermitão</span>
+                    <span className="item-navbar-text-left name-usuario"> Olá, {localStorage.getItem('name')}</span>
                 </div>
                 <div className="group-navbar-right">
                     <button className="item-navbar-right" onClick={addToCart}><i className="fas fa-shopping-cart fa-1x"></i></button>
