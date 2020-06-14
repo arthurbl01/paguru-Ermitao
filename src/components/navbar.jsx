@@ -17,6 +17,9 @@ const [name, setName ] = useState (localStorage.getItem('name'));
     
         window.location.reload()
     }
+    const toHome = () => {
+        window.location.href = "/home";
+    }
 
     if(name === 'visitante') {
         return(
@@ -27,11 +30,11 @@ const [name, setName ] = useState (localStorage.getItem('name'));
             <div className="container-navbar">
             <div className="navbar">
                 <div className="group-navbar-left">
-                    <span className="item-navbar-text-left logo">Ermitão</span>
+                    <span className="item-navbar-text-left logo" onClick={toHome}>Ermitão</span>
                     <span className="item-navbar-text-left name-usuario"> Olá, {localStorage.getItem('name')}</span>
                 </div>
                 <div className="group-navbar-right">
-                    <button className="item-navbar-right" onClick={addToCart}><i className="fas fa-shopping-cart fa-1x"></i></button>
+                    <button className="item-navbar-right" onClick={addToCart} style={{display: props.hide}}><i className="fas fa-shopping-cart fa-1x"></i></button>
                     <button className="item-navbar-right" onClick={handleLogout}><i className="fas fa-sign-out-alt fa-1x"></i></button>
                 </div>
             </div>

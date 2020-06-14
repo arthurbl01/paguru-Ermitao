@@ -9,6 +9,7 @@
     background-color: #E3451A;
     height: 70px;
     width: 100%;
+    z-index: 10;
 }
 
 
@@ -45,6 +46,7 @@
 
 }
 .logo{
+    cursor: pointer;
     font-weight: 800 !important;
     font-size: calc(25px + (12 - 11) * ((100vw - 320px) / (1920 - 320))) !important;
 }
@@ -95,6 +97,9 @@
     font-weight: 700;
     color: #E3451A;
     text-transform: uppercase;
+    animation-name: example;
+    animation-duration: 4s;
+   
 }
 
 .itens-catalogue{
@@ -153,21 +158,29 @@
     transition:  0.5s;
     color: #E3440C;
     background-color: #c92100;
+    animation-name: catalogue;
+    animation-duration: 0.5s;
 }
+
+
 
 /* CARRINHO DE COMPRAS */
 
 .container-cart{
     display: none;
     justify-content: flex-end;
+
+    background-color: #FFF;
+
 }
 .cart{
     margin-top: 70px;
     position: fixed;
     background-color: #FFF;
     width: 450px;
-
+    z-index: 10;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
 }
 
 
@@ -213,7 +226,7 @@
 
 .itens-cart{
     padding: 5px 20px;
-    max-height: 500px;
+    max-height: 300px;
     overflow-y: visible;
     overflow-x: hidden;
 }
@@ -407,3 +420,20 @@
         height: 150px;
     }
 }
+
+/* ANIMAÇÕES */
+
+@keyframes example {
+    from {margin-top: -150px;}
+    to {margin-top: 150px;}
+  }
+
+
+
+  @keyframes catalogue {
+    0% {margin: 0px;    margin-top: 20px;}
+    25% {margin-right: 0px;    margin-top: 20px;}
+    50% {margin-left: -5px;    margin-top: 20px;}
+    75% {margin-right: 0px;    margin-top: 20px;}
+    100% {margin: 0px;    margin-top: 20px;}
+  }

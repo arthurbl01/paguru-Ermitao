@@ -80,10 +80,11 @@ export default function Home() {
         setShowCart('flex')
     }
 
+  
     if (verify){
         return <Redirect to="/pay" />
     } else {
-
+        
         return(
             <React.Fragment>
                 
@@ -103,9 +104,9 @@ export default function Home() {
                         {
                             carrinho.map((item, index) => {
                                 return(
-                                    <div className="item-cart" key={item.key}>
+                                    <div className="item-cart" data-aos="flip-left" key={item.key}>
                         
-                                        <div className="data-item-cart">
+                                        <div className="data-item-cart" >
                                             <img className="img-item-cart" src={item.imagem} />
                             
                                             <div className="qtd-item-cart">

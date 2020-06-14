@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, use } from 'react';
 import '../css/pay.css';
 import firebase from 'firebase'
 import '../firebase'
@@ -12,6 +12,9 @@ export default function Pay(){
     const [ showCart, setShowCart ] =  useState ('none');
     const [ carrinho , setCarrinho ] = useState ([]);
     const [ valorTotal , setValorTotal ] = useState (0);
+
+
+
 
     useEffect(() => {
         async function getCar() {
@@ -39,11 +42,12 @@ export default function Pay(){
       
     
     }, []);
-
-    
+  
+   
+ 
     return(
         <div className="container-pay">
-            <Navbar setShow={setShowCart} show={showCart}/>
+            <Navbar setShow={setShowCart} show={showCart} hide='none'/>
            { /*  <Cart show={showCart}/> */}
             <div className="checkout">
                 <div className="receipt">
@@ -84,12 +88,12 @@ export default function Pay(){
                     <div className="form-payment">
                         <div className="form-group-card-vality">
                             <p htmlFor="card-vality" className="txt-card-vality">Data de Validade</p>
-                            <input id="card-vality" className="input-card-vality" placeholder="MM/AA" />
+                            <input id="card-vality" className="input-card-vality"  placeholder="MM/AA"/>
                         </div>
 
                         <div className="form-group-details-card">
                             <p htmlFor="card-code" className="txt-card-code">Código de Segurança</p>
-                            <input id="card-code" className="input-card-code" placeholder="***" />
+                            <input id="card-code" type="password" className="input-card-code" placeholder="***" />
                         </div>
                     </div>
                     <hr/>
@@ -101,7 +105,7 @@ export default function Pay(){
                         </div>
                         <div className="form-group-number-residence">
                             <p htmlFor="input-number-residence" className="txt-number-residence">Nº</p>
-                            <input id="input-number-residence" className="input-number-residence" placeholder="00" />
+                            <input id="input-number-residence" className="input-number-residence"  placeholder="00"/>
                         </div>
                         <div className="form-group-uf-residence">
                             <p htmlFor="input-uf-residence" className="txt-uf-residence">UF</p>
