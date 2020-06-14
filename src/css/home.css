@@ -419,6 +419,11 @@
         width: 40%;
         height: 150px;
     }
+    .item-navbar-right{
+
+        margin: 0px 10px ;
+
+    }
 }
 
 /* ANIMAÇÕES */

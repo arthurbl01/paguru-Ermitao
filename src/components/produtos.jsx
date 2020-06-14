@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState } from 'react';
 import firebase from 'firebase'
 import '../firebase'
-import AOS from 'aos';
+
 
 export default function Produtos(props){
     const [ name , setName ] = useState (localStorage.getItem('name'));
@@ -30,9 +30,8 @@ export default function Produtos(props){
     }
 
 
-    AOS.init();
     return( 
-            <div className="item-catalogue" data-aos="fade-up">
+            <div className="item-catalogue" >
                 <img className="img-product" src={props.image} />
                 <div className="product-data">
                     <h4 className="name-product"> {props.name} </h4>

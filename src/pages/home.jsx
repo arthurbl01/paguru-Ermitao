@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../css/reset.css';
 import '../css/home.css';
 import firebase from 'firebase'
@@ -104,7 +104,7 @@ export default function Home() {
                         {
                             carrinho.map((item, index) => {
                                 return(
-                                    <div className="item-cart" data-aos="flip-left" key={item.key}>
+                                    <div className="item-cart" key={item.key}>
                         
                                         <div className="data-item-cart" >
                                             <img className="img-item-cart" src={item.imagem} />
